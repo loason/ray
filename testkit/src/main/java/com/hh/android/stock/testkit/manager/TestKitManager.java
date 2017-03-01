@@ -7,6 +7,7 @@ import android.os.Build;
 import android.util.Log;
 
 import com.hh.android.stock.testkit.callback.OnAddressChangeListener;
+import com.hh.android.stock.testkit.callback.OnGetExtraData;
 import com.hh.android.stock.testkit.crash.CrashHandler;
 
 import java.lang.reflect.Field;
@@ -28,7 +29,11 @@ public class TestKitManager {
 
     private String currentAddress;
 
+    /* 友盟的device_token */
+    private String deviceToken;
+
     private OnAddressChangeListener onAddressChangeListener;
+    private OnGetExtraData onGetExtraData;
 
     public static TestKitManager getInstance(){
         if(instance == null){
@@ -41,9 +46,24 @@ public class TestKitManager {
         CrashHandler.getInstance().init();
     }
 
-    public void setOnAddressChangeListener(OnAddressChangeListener onAddressChangeListener, String currentAddress){
+    public void setOnAddressChangeListener(OnAddressChangeListener onAddressChangeListener){
         this.onAddressChangeListener = onAddressChangeListener;
-        this.currentAddress = currentAddress;
+    }
+
+    public void setOnGetExtraData(OnGetExtraData onGetExtraData){
+        this.onGetExtraData = onGetExtraData;
+    }
+
+    public OnGetExtraData getOnGetExtraData(){
+        return onGetExtraData;
+    }
+
+    public void setDeviceToken(String deviceToken){
+        this.deviceToken = deviceToken;
+    }
+
+    public String getDeviceToken(){
+        return deviceToken;
     }
 
     public OnAddressChangeListener getOnAddressChangeListener(){

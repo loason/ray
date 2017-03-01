@@ -52,7 +52,6 @@ public class PageChangeAddress extends BaseActivity {
     private void initData() {
         /* 添加备选地址 */
         historyList.clear();
-        historyList.add("http://teststock.winjijin.com");
         historyStr = SpUtil.getStringValue(this, KEY_ADDRESS);
         if(!TextUtils.isEmpty(historyStr)){
             String[] temp = historyStr.split(",");
