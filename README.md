@@ -19,3 +19,5 @@ TestKitManager.getInstance().setOnAddressChangeListener(new OnAddressChangeListe
         
 调用如下方法可以显示当前请求的地址
 TestKitManager.getInstance().setCurrentAddress(requestUrl);
+
+具体功能实现可下载demo观看
